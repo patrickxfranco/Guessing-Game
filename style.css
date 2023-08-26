@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(287.56deg, #c2e9fb 0%, #a1c4fd 100%);
+  font-size: 1.6rem;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+body,
+button,
+input {
+  font-family: "DM Sans", sans-serif;
+}
+
+main {
+  background: #ffffff;
+  padding: 4.8rem 6.4rem 6.4rem;
+  border-radius: 6px;
+  box-shadow: 0px 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+
+  width: min(50rem, 90%);
+  margin: 0 auto;
+  margin-top: -12rem;
+  text-align: center;
+}
+
+input[type="button"]:hover,
+button:hover {
+  background: #6d6dda;
+}
+
+.hide {
+  display: none;
+}
+
+/* ⬇⬇ SCREEN 1 ⬇⬇ */
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 1.6rem;
+  color: #34355b;
+}
+
+p {
+  color: rgba(52, 53, 91, 0.8);
+}
+
+form {
+  margin-top: 4.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+form input {
+  text-align: center;
+  border-radius: 0;
+  height: 5.3rem;
+  border: 0;
+}
+
+form input[type="text"] {
+  border-radius: 0.4rem 0 0 0.4rem;
+  background: #dce2e9;
+  color: #34355b;
+  outline: none;
+  width: 4.3rem;
+}
+
+form input[type="text"]::placeholder {
+  opacity: 0.5;
+}
+
+form input[type="button"] {
+  border-radius: 0 0.4rem 0.4rem 0;
+  background: #7879f1;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  width: 8.2rem;
+  transition: background 0.3s;
+}
+
+/* ⬇⬇ SCREEN 2 ⬇⬇ */
+
+h2 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 2.4rem;
+  margin-bottom: 3.3rem;
+  color: #34355b;
+}
+
+button {
+  border-radius: 0.4rem;
+  background: #7879f1;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  border: 0.4rem;
+  width: 16.6rem;
+  height: 5.3rem;
+  transition: background 0.3s;
+}
