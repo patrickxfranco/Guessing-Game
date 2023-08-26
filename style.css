@@ -62,7 +62,8 @@ form {
   justify-content: center;
 }
 
-form input {
+form input,
+form button {
   text-align: center;
   border-radius: 0;
   height: 5.3rem;
@@ -81,7 +82,7 @@ form input[type="text"]::placeholder {
   opacity: 0.5;
 }
 
-form input[type="button"] {
+form button {
   border-radius: 0 0.4rem 0.4rem 0;
   background: #7879f1;
   font-weight: bold;

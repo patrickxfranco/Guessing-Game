@@ -1,7 +1,18 @@
 const screen1 = document.querySelector(".screen1")
 const screen2 = document.querySelector(".screen2")
+const btnTry = document.querySelector("#btnTry")
+const btnAgain = document.querySelector("#btnAgain")
+
 const randomNumber = Math.round(Math.random() * 10)
 let xAttempts = 1
+
+btnTry.addEventListener('click', handleTryClick)
+btnAgain.addEventListener('click', handleAgainClick)
+document.addEventListener('keypress', function (event) {
+  if (event.key == 'Enter' && screen1.classList.contains('hide')) {
+    handleAgainClick()
+  }
+})
 
 function handleTryClick(event) {
 
@@ -24,15 +35,9 @@ function handleTryClick(event) {
 }
 
 function handleAgainClick(event) {
-  location.reload()
-  /*   screen2.classList.add("hide")
-    screen1.classList.remove("hide")
-    inputNumber.value = ""
-    xAttempts = 1 */
+  event.preventDefault()
+  screen2.classList.add("hide")
+  screen1.classList.remove("hide")
+  inputNumber.value = ""
+  xAttempts = 1
 }
-
-const btnTry = document.querySelector("#btnTry")
-const btnAgain = document.querySelector("#btnAgain")
-
-btnTry.addEventListener('click', handleTryClick)
-btnAgain.addEventListener('click', handleAgainClick)
