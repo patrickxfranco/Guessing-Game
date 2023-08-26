@@ -3,16 +3,23 @@ const screen2 = document.querySelector(".screen2")
 const btnTry = document.querySelector("#btnTry")
 const btnAgain = document.querySelector("#btnAgain")
 
-const randomNumber = Math.round(Math.random() * 10)
+let randomNumber = Math.round(Math.random() * 10)
 let xAttempts = 1
 
 btnTry.addEventListener('click', handleTryClick)
 btnAgain.addEventListener('click', handleAgainClick)
-document.addEventListener('keypress', function (event) {
+document.addEventListener('keypress', enterPressed)
+
+function toggleScreen() {
+  screen1.classList.toggle('hide')
+  screen2.classList.toggle('hide')
+}
+
+function enterPressed(event) {
   if (event.key == 'Enter' && screen1.classList.contains('hide')) {
     handleAgainClick()
   }
-})
+}
 
 function handleTryClick(event) {
 
@@ -22,22 +29,23 @@ function handleTryClick(event) {
 
   let inputNumber = document.querySelector("#inputNumber")
 
-  if (Number(inputNumber.value) == randomNumber) {
-    screen1.classList.add("hide")
-    screen2.classList.remove("hide")
-
+  if (Number(inputNumber.value) < 0 || Number(inputNumber.value) > 10 || Number(inputNumber.value) == '') {
+    alert('Você precisar escolher um número entre 0 e 10')
+  } if (Number(inputNumber.value) > 0 && Number(inputNumber.value) < 10 && Number(inputNumber.value) != '') {
+    xAttempts++
+  } if (Number(inputNumber.value) == randomNumber) {
     document.querySelector(".screen2 h2").innerText = (`Acertou em ${xAttempts} vezes`)
+    toggleScreen()
   } else {
     inputNumber.value = ""
   }
 
-  xAttempts++
 }
 
 function handleAgainClick(event) {
   event.preventDefault()
-  screen2.classList.add("hide")
-  screen1.classList.remove("hide")
+  toggleScreen()
   inputNumber.value = ""
   xAttempts = 1
+  randomNumber = Math.round(Math.random() * 10)
 }
